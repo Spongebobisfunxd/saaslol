@@ -144,8 +144,8 @@ Najszybszy sposób uruchomienia całego systemu. Wymagany tylko **Docker Desktop
 ### Krok 1: Sklonuj repozytorium
 
 ```bash
-git clone https://github.com/TWOJE_KONTO/loyalty-saas.git
-cd loyalty-saas
+git clone https://github.com/Spongebobisfunxd/saaslol.git
+cd saaslol
 ```
 
 ### Krok 2: Uruchom wszystkie usługi
