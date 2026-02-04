@@ -1,0 +1,66 @@
+{
+  "title": "Klienci",
+  "addCustomer": "Dodaj klienta",
+  "editCustomer": "Edytuj klienta",
+  "customerDetails": "Szczegóły klienta",
+  "deleteCustomer": "Usuń klienta",
+  "fields": {
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Adres e-mail",
+    "phone": "Numer telefonu",
+    "dateOfBirth": "Data urodzenia",
+    "gender": "Płeć",
+    "address": "Adres",
+    "city": "Miasto",
+    "postalCode": "Kod pocztowy",
+    "registeredAt": "Data rejestracji",
+    "lastVisit": "Ostatnia wizyta",
+    "totalSpent": "Łączne wydatki",
+    "points": "Punkty",
+    "tier": "Poziom",
+    "status": "Status",
+    "notes": "Notatki",
+    "tags": "Tagi",
+    "source": "Źródło pozyskania"
+  },
+  "gender": {
+    "male": "Mężczyzna",
+    "female": "Kobieta",
+    "other": "Inna",
+    "unspecified": "Nie podano"
+  },
+  "tabs": {
+    "profile": "Profil",
+    "transactions": "Transakcje",
+    "rewards": "Nagrody",
+    "activity": "Aktywność",
+    "notes": "Notatki"
+  },
+  "filters": {
+    "allCustomers": "Wszyscy klienci",
+    "active": "Aktywni",
+    "inactive": "Nieaktywni",
+    "newThisMonth": "Nowi w tym miesiącu",
+    "highValue": "Wysoka wartość"
+  },
+  "import": {
+    "title": "Importuj klientów",
+    "description": "Prześlij plik CSV z danymi klientów",
+    "template": "Pobierz szablon",
+    "success": "Zaimportowano {count} klientów pomyślnie.",
+    "errors": "Wystąpiły błędy podczas importu. Sprawdź plik i spróbuj ponownie."
+  },
+  "export": {
+    "title": "Eksportuj klientów",
+    "allCustomers": "Wszyscy klienci",
+    "filtered": "Tylko przefiltrowane",
+    "format": "Format pliku"
+  },
+  "messages": {
+    "created": "Klient został dodany pomyślnie.",
+    "updated": "Dane klienta zostały zaktualizowane.",
+    "deleted": "Klient został usunięty.",
+    "notFound": "Nie znaleziono klienta."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "navigation": {
+    "dashboard": "Panel główny",
+    "customers": "Klienci",
+    "programs": "Programy lojalnościowe",
+    "rewards": "Nagrody",
+    "campaigns": "Kampanie",
+    "transactions": "Transakcje",
+    "analytics": "Analityka",
+    "settings": "Ustawienia",
+    "help": "Pomoc",
+    "logout": "Wyloguj się"
+  },
+  "actions": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "create": "Utwórz",
+    "search": "Szukaj",
+    "filter": "Filtruj",
+    "export": "Eksportuj",
+    "back": "Wróć",
+    "next": "Dalej",
+    "confirm": "Potwierdź",
+    "close": "Zamknij",
+    "add": "Dodaj",
+    "remove": "Usuń",
+    "reset": "Resetuj",
+    "submit": "Wyślij",
+    "upload": "Prześlij",
+    "download": "Pobierz",
+    "refresh": "Odśwież",
+    "details": "Szczegóły",
+    "copy": "Kopiuj",
+    "selectAll": "Zaznacz wszystko"
+  },
+  "status": {
+    "active": "Aktywny",
+    "inactive": "Nieaktywny",
+    "pending": "Oczekujący",
+    "suspended": "Zawieszony",
+    "completed": "Zakończony",
+    "cancelled": "Anulowany",
+    "draft": "Wersja robocza",
+    "archived": "Zarchiwizowany",
+    "expired": "Wygasły"
+  },
+  "errors": {
+    "generic": "Wystąpił nieoczekiwany błąd. Spróbuj ponownie.",
+    "notFound": "Nie znaleziono żądanego zasobu.",
+    "unauthorized": "Brak uprawnień do wykonania tej operacji.",
+    "forbidden": "Dostęp zabroniony.",
+    "networkError": "Błąd połączenia z serwerem. Sprawdź połączenie internetowe.",
+    "serverError": "Błąd serwera. Spróbuj ponownie później.",
+    "validationError": "Formularz zawiera błędy. Popraw je i spróbuj ponownie.",
+    "sessionExpired": "Sesja wygasła. Zaloguj się ponownie."
+  },
+  "confirmations": {
+    "delete": "Czy na pewno chcesz usunąć ten element? Tej operacji nie można cofnąć.",
+    "unsavedChanges": "Masz niezapisane zmiany. Czy na pewno chcesz opuścić tę stronę?",
+    "deactivate": "Czy na pewno chcesz dezaktywować ten element?",
+    "logout": "Czy na pewno chcesz się wylogować?"
+  },
+  "pagination": {
+    "page": "Strona",
+    "of": "z",
+    "showing": "Wyświetlanie",
+    "results": "wyników",
+    "perPage": "na stronę",
+    "first": "Pierwsza",
+    "last": "Ostatnia",
+    "previous": "Poprzednia",
+    "next": "Następna",
+    "noResults": "Brak wyników"
+  },
+  "time": {
+    "seconds": "sekund",
+    "minutes": "minut",
+    "hours": "godzin",
+    "days": "dni",
+    "weeks": "tygodni",
+    "months": "miesięcy",
+    "years": "lat",
+    "ago": "temu",
+    "justNow": "właśnie teraz",
+    "yesterday": "wczoraj",
+    "today": "dzisiaj",
+    "tomorrow": "jutro"
+  }
+}

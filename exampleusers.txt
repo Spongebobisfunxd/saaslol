@@ -1,0 +1,226 @@
+================================================================================
+                    LOYALTY SAAS - EXAMPLE USERS
+================================================================================
+
+This file contains example users for every role and frontend variation.
+Use these credentials to explore the system.
+
+Note: Passwords must have 8+ chars, 1 uppercase letter, 1 digit.
+Phone numbers are Polish format (+48 XXXXXXXXX).
+NIP is a 10-digit Polish tax identification number.
+
+
+================================================================================
+  DASHBOARD (Admin Panel) - http://localhost:3000
+  For business owners and staff who manage the loyalty program.
+================================================================================
+
+--- OWNER (Full access - can manage everything) ---
+
+  Email:       jan.kowalski@kawiarnia.pl
+  Password:    Kawa2024!
+  First Name:  Jan
+  Last Name:   Kowalski
+  Role:        OWNER
+  Phone:       +48 512 345 678
+  Company:     Kawiarnia Rozmowa Sp. z o.o.
+  NIP:         7272830357
+  Description: Jan owns a chain of cafes in Warsaw. He registered the business
+               and has full access to all settings, billing, team management,
+               programs, rewards, campaigns, analytics, and integrations.
+
+--- ADMIN (Administrative access) ---
+
+  Email:       anna.nowak@kawiarnia.pl
+  Password:    Admin2024!
+  First Name:  Anna
+  Last Name:   Nowak
+  Role:        ADMIN
+  Phone:       +48 601 234 567
+  Description: Anna is the operations director. She can manage tenant settings,
+               locations, team members, and all loyalty program configuration.
+               She cannot access billing or delete the tenant.
+
+--- MANAGER (Customer & program management) ---
+
+  Email:       tomasz.wisniewski@kawiarnia.pl
+  Password:    Manage2024!
+  First Name:  Tomasz
+  Last Name:   Wisniewski
+  Role:        MANAGER
+  Phone:       +48 698 765 432
+  Description: Tomasz manages two cafe locations. He can create, update, and
+               delete customers, manage rewards fulfillment, run campaigns,
+               and view analytics. Cannot change tenant settings or team.
+
+--- STAFF (Read-only access) ---
+
+  Email:       kasia.lewandowska@kawiarnia.pl
+  Password:    Staff2024!
+  First Name:  Katarzyna
+  Last Name:   Lewandowska
+  Role:        STAFF
+  Phone:       +48 733 456 789
+  Description: Kasia is a barista and part-time cashier. She has read-only
+               access to customer profiles and can look up loyalty information
+               at the point of sale. Cannot modify any data.
+
+
+================================================================================
+  PORTAL (Customer Loyalty App) - http://localhost:3002
+  For end customers who participate in the loyalty program.
+================================================================================
+
+--- REGULAR CUSTOMER ---
+
+  Phone:       +48 500 111 222
+  First Name:  Piotr
+  Last Name:   Lewandowski
+  Email:       piotr.lew@gmail.com
+  Points:      1,250
+  Tier:        Srebrny (Silver)
+  Birth Date:  1990-05-15
+  Tags:        regular, coffee-lover
+  Description: Piotr is a regular customer who visits 3x per week. He has
+               accumulated 1,250 points and is working toward Gold tier.
+               He has 7/10 stamps on his coffee card.
+
+--- VIP CUSTOMER ---
+
+  Phone:       +48 600 333 444
+  First Name:  Magdalena
+  Last Name:   Zielinska
+  Email:       magda.z@outlook.com
+  Points:      4,800
+  Tier:        Zloty (Gold)
+  Birth Date:  1985-11-23
+  Tags:        vip, birthday-promo, early-adopter
+  Description: Magdalena is a VIP Gold tier customer. She was one of the first
+               to join the program and has redeemed 12 rewards. She receives
+               exclusive campaign offers and double points on weekends.
+
+--- NEW CUSTOMER ---
+
+  Phone:       +48 789 555 666
+  First Name:  Oleksandr
+  Last Name:   Bondarenko
+  Email:       olek.b@gmail.com
+  Points:      75
+  Tier:        Brazowy (Bronze)
+  Birth Date:  1998-03-08
+  Tags:        new-customer
+  Language:    uk (Ukrainian)
+  Description: Oleksandr just joined the program last week. He has minimal
+               points and is exploring the rewards catalog. He uses the
+               portal in Ukrainian language. Has 1/10 stamps on coffee card.
+
+--- INACTIVE CUSTOMER ---
+
+  Phone:       +48 510 777 888
+  First Name:  Ewa
+  Last Name:   Dabrowska
+  Email:       ewa.dabrowska@wp.pl
+  Points:      320
+  Tier:        Brazowy (Bronze)
+  Birth Date:  1975-09-30
+  Tags:        inactive, win-back-target
+  Description: Ewa hasn't visited in 45 days. She has 320 unredeemed points.
+               She is tagged for the "win-back" campaign and will receive a
+               re-engagement SMS with bonus points offer.
+
+
+================================================================================
+  KIOSK (Point-of-Sale Terminal) - http://localhost:3003
+  Self-service kiosk for customers to check in at physical locations.
+================================================================================
+
+--- KIOSK DEVICE: Main Counter ---
+
+  Device Token:  KIOSK-MAIN-001-ROZMOWA
+  Location:      Kawiarnia Rozmowa - Glowny Oddzial
+  Address:       ul. Marszalkowska 42, 00-141 Warszawa
+  Orientation:   Landscape
+  Description:   Primary kiosk at the main cafe counter. Customers use it to
+                 look up their account by phone number or QR code, earn points,
+                 redeem rewards, and collect stamps.
+
+--- KIOSK DEVICE: Drive-Through ---
+
+  Device Token:  KIOSK-DRIVE-002-ROZMOWA
+  Location:      Kawiarnia Rozmowa - Drive-Through
+  Address:       ul. Pulawska 186, 02-670 Warszawa
+  Orientation:   Landscape
+  Description:   Drive-through kiosk. Optimized for quick phone lookup and
+                 stamp collection. Works in offline mode when connection is
+                 intermittent, syncing operations when back online.
+
+--- KIOSK DEVICE: Mall Location ---
+
+  Device Token:  KIOSK-MALL-003-ROZMOWA
+  Location:      Kawiarnia Rozmowa - Galeria Mokotow
+  Address:       ul. Wolska 12, 01-258 Warszawa
+  Orientation:   Landscape
+  Description:   Mall location kiosk. High traffic, handles reward redemption
+                 and point earning. Uses IndexedDB cache for customer data
+                 to ensure fast lookups even during busy periods.
+
+
+================================================================================
+  SAMPLE CUSTOMER ACCOUNTS (for Kiosk phone lookup testing)
+================================================================================
+
+  Phone: 500111222  ->  Piotr Lewandowski     (1,250 pts, Silver, 7/10 stamps)
+  Phone: 600333444  ->  Magdalena Zielinska   (4,800 pts, Gold, card complete)
+  Phone: 789555666  ->  Oleksandr Bondarenko  (75 pts, Bronze, 1/10 stamps)
+  Phone: 510777888  ->  Ewa Dabrowska         (320 pts, Bronze, 3/10 stamps)
+  Phone: 505999111  ->  Marek Kaminski        (2,100 pts, Silver, 5/8 lunch)
+  Phone: 661222333  ->  Zofia Wozniak         (890 pts, Silver, 4/6 dessert)
+
+
+================================================================================
+  COMPANY / TENANT DETAILS
+================================================================================
+
+  Company Name:    Kawiarnia Rozmowa Sp. z o.o.
+  NIP:             7272830357
+  Slug:            kawiarnia-rozmowa-a1b2c3d4
+  Plan:            Professional
+  Currency:        PLN
+  Timezone:        Europe/Warsaw
+  Locale:          pl
+  Brand Color:     #8B4513
+
+  Locations:
+    1. Glowny Oddzial    - ul. Marszalkowska 42, 00-141 Warszawa
+    2. Drive-Through     - ul. Pulawska 186, 02-670 Warszawa
+    3. Galeria Mokotow   - ul. Wolska 12, 01-258 Warszawa
+
+  Loyalty Programs:
+    1. "Program Kawowy"  - Points-based (1 PLN = 1 point)
+    2. "Karta Stemplowa" - Stamp card (10 stamps = free coffee)
+    3. "Lunch Pass"      - Stamp card (8 stamps = free lunch)
+
+  Tiers:
+    - Brazowy (Bronze):  0 - 499 pts      (1x multiplier)
+    - Srebrny (Silver):  500 - 1,999 pts  (1.25x multiplier)
+    - Zloty (Gold):      2,000 - 4,999 pts (1.5x multiplier)
+    - Platynowy (Plat.): 5,000+ pts       (2x multiplier)
+
+
+================================================================================
+  QUICK START GUIDE
+================================================================================
+
+  1. Dashboard:  Go to http://localhost:3000/login
+                 Log in with jan.kowalski@kawiarnia.pl / Kawa2024!
+                 Explore the admin panel, analytics, campaigns, etc.
+
+  2. Portal:     Go to http://localhost:3002/login
+                 Enter phone 500111222, then any 6-digit code (e.g. 123456)
+                 Browse rewards, stamps, QR code, and shakeomat.
+
+  3. Kiosk:      Go to http://localhost:3003
+                 Click "Set Up Device" and enter token KIOSK-MAIN-001-ROZMOWA
+                 Then look up a customer by phone (e.g. 500111222)
+
+================================================================================

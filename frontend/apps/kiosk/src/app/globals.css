@@ -1,0 +1,583 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 33% 3%;
+    --foreground: 216 33% 93%;
+    --card: 216 33% 7%;
+    --card-foreground: 216 33% 93%;
+    --popover: 216 33% 7%;
+    --popover-foreground: 216 33% 93%;
+    --primary: 190 100% 50%;
+    --primary-foreground: 240 33% 3%;
+    --secondary: 216 33% 12%;
+    --secondary-foreground: 216 33% 93%;
+    --muted: 216 20% 16%;
+    --muted-foreground: 215 14% 35%;
+    --accent: 155 100% 50%;
+    --accent-foreground: 240 33% 3%;
+    --destructive: 346 100% 65%;
+    --destructive-foreground: 216 33% 93%;
+    --border: 216 33% 16%;
+    --input: 216 33% 16%;
+    --ring: 190 100% 50%;
+    --radius: 1rem;
+    --success: 155 100% 50%;
+    --success-foreground: 240 33% 3%;
+    --warning: 346 100% 65%;
+    --warning-foreground: 216 33% 93%;
+
+    --void-black: #06060a;
+    --navy-surface: #0d1117;
+    --navy-surface-light: #161b26;
+    --cyan-primary: #00d4ff;
+    --cyan-primary-dim: #00a3c7;
+    --emerald-success: #00ff88;
+    --coral-warning: #ff4d6a;
+    --cool-white: #e8edf4;
+    --dim-steel: #4a5568;
+    --cyan-glow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.1);
+    --emerald-glow: 0 0 20px rgba(0, 255, 136, 0.4), 0 0 60px rgba(0, 255, 136, 0.1);
+    --coral-glow: 0 0 20px rgba(255, 77, 106, 0.4), 0 0 60px rgba(255, 77, 106, 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background: var(--void-black);
+    color: var(--cool-white);
+  }
+}
+
+/* Kiosk-specific: prevent text selection, context menus, and scrolling */
+body.kiosk-mode {
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+}
+
+/* Large touch target base */
+.touch-target {
+  min-height: 80px;
+  min-width: 80px;
+  @apply flex items-center justify-center;
+}
+
+/* ============================================================
+   ANIMATED GRID BACKGROUND
+   ============================================================ */
+.futuristic-grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.futuristic-grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: grid-drift 20s linear infinite;
+}
+
+.futuristic-grid-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 212, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(0, 255, 136, 0.04) 0%, transparent 50%);
+}
+
+@keyframes grid-drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+/* ============================================================
+   SCANLINE OVERLAY
+   ============================================================ */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scanline-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 212, 255, 0.015) 2px,
+    rgba(0, 212, 255, 0.015) 4px
+  );
+}
+
+.scanline-overlay::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 212, 255, 0.03) 50%,
+    transparent 100%
+  );
+  animation: scanline-sweep 8s linear infinite;
+}
+
+@keyframes scanline-sweep {
+  0% { top: -100px; }
+  100% { top: calc(100% + 100px); }
+}
+
+/* ============================================================
+   HOLOGRAPHIC CARD
+   ============================================================ */
+.holo-card {
+  background: linear-gradient(
+    135deg,
+    rgba(13, 17, 23, 0.9) 0%,
+    rgba(22, 27, 38, 0.95) 50%,
+    rgba(13, 17, 23, 0.9) 100%
+  );
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 1rem;
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 1px rgba(0, 212, 255, 0.3),
+    inset 0 1px 0 rgba(0, 212, 255, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.holo-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(0, 212, 255, 0.03) 45%,
+    rgba(0, 255, 136, 0.02) 50%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   GLOW BORDER CARD
+   ============================================================ */
+.glow-border {
+  position: relative;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.08), inset 0 0 15px rgba(0, 212, 255, 0.03);
+}
+
+.glow-border-emerald {
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.08), inset 0 0 15px rgba(0, 255, 136, 0.03);
+}
+
+.glow-border-coral {
+  border: 1px solid rgba(255, 77, 106, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(255, 77, 106, 0.08), inset 0 0 15px rgba(255, 77, 106, 0.03);
+}
+
+/* ============================================================
+   NUMPAD BUTTON STYLING - Futuristic
+   ============================================================ */
+.numpad-btn {
+  @apply touch-target flex items-center justify-center text-3xl font-bold transition-all duration-100 active:scale-95;
+  background: linear-gradient(180deg, rgba(22, 27, 38, 0.95) 0%, rgba(13, 17, 23, 0.98) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 1rem;
+  color: var(--cool-white);
+  box-shadow:
+    0 0 8px rgba(0, 212, 255, 0.05),
+    inset 0 1px 0 rgba(0, 212, 255, 0.08);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.numpad-btn:hover {
+  border-color: rgba(0, 212, 255, 0.35);
+  box-shadow:
+    0 0 15px rgba(0, 212, 255, 0.15),
+    inset 0 1px 0 rgba(0, 212, 255, 0.12);
+}
+
+.numpad-btn:active {
+  background: linear-gradient(180deg, rgba(0, 212, 255, 0.12) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow:
+    0 0 25px rgba(0, 212, 255, 0.25),
+    inset 0 0 15px rgba(0, 212, 255, 0.08);
+}
+
+.numpad-btn-action {
+  @apply touch-target flex items-center justify-center text-2xl font-bold transition-all duration-100 active:scale-95;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+}
+
+/* ============================================================
+   PULSE ANIMATION FOR SYNC INDICATOR
+   ============================================================ */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.sync-pulse {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   NEON PULSE ANIMATION
+   ============================================================ */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.3), 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.2);
+  }
+}
+
+.neon-pulse {
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse-emerald {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 136, 0.3), 0 0 20px rgba(0, 255, 136, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 255, 136, 0.2);
+  }
+}
+
+.neon-pulse-emerald {
+  animation: neon-pulse-emerald 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse-coral {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 77, 106, 0.3), 0 0 20px rgba(255, 77, 106, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 77, 106, 0.5), 0 0 40px rgba(255, 77, 106, 0.2);
+  }
+}
+
+.neon-pulse-coral {
+  animation: neon-pulse-coral 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   SUCCESS CHECKMARK ANIMATION
+   ============================================================ */
+@keyframes draw-check {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-check {
+  stroke-dasharray: 100;
+  animation: draw-check 0.6s ease-out forwards;
+}
+
+/* ============================================================
+   SCALE-IN ANIMATION
+   ============================================================ */
+@keyframes scale-in {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out forwards;
+}
+
+/* ============================================================
+   TEXT GLOW EFFECTS
+   ============================================================ */
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+.text-glow-coral {
+  text-shadow: 0 0 10px rgba(255, 77, 106, 0.5), 0 0 30px rgba(255, 77, 106, 0.2);
+}
+
+.text-glow-white {
+  text-shadow: 0 0 8px rgba(232, 237, 244, 0.3), 0 0 20px rgba(232, 237, 244, 0.1);
+}
+
+/* ============================================================
+   HOLOGRAPHIC SCANNER AREA
+   ============================================================ */
+@keyframes scanner-line {
+  0% { top: 0%; }
+  50% { top: 90%; }
+  100% { top: 0%; }
+}
+
+.scanner-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanner-area::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan-primary), transparent);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 212, 255, 0.3);
+  animation: scanner-line 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   CORNER BRACKETS FOR SCANNER
+   ============================================================ */
+.corner-brackets {
+  position: relative;
+}
+
+.corner-brackets::before,
+.corner-brackets::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--cyan-primary);
+  pointer-events: none;
+}
+
+.corner-brackets::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-brackets::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* ============================================================
+   FUTURISTIC BUTTON STYLES
+   ============================================================ */
+.btn-futuristic-primary {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 1.5rem;
+  color: var(--cyan-primary);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), inset 0 1px 0 rgba(0, 212, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-futuristic-primary:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 212, 255, 0.15) 100%);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.25), inset 0 1px 0 rgba(0, 212, 255, 0.2);
+}
+
+.btn-futuristic-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-futuristic-success {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 255, 136, 0.1) 100%);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  border-radius: 1.5rem;
+  color: var(--emerald-success);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.15), inset 0 1px 0 rgba(0, 255, 136, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-futuristic-success:hover {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.3) 0%, rgba(0, 255, 136, 0.15) 100%);
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.25), inset 0 1px 0 rgba(0, 255, 136, 0.2);
+}
+
+.btn-futuristic-success:active {
+  transform: scale(0.95);
+}
+
+.btn-futuristic-danger {
+  background: linear-gradient(135deg, rgba(255, 77, 106, 0.2) 0%, rgba(255, 77, 106, 0.1) 100%);
+  border: 1px solid rgba(255, 77, 106, 0.4);
+  border-radius: 1.5rem;
+  color: var(--coral-warning);
+  box-shadow: 0 0 20px rgba(255, 77, 106, 0.15), inset 0 1px 0 rgba(255, 77, 106, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-futuristic-danger:hover {
+  background: linear-gradient(135deg, rgba(255, 77, 106, 0.3) 0%, rgba(255, 77, 106, 0.15) 100%);
+  box-shadow: 0 0 30px rgba(255, 77, 106, 0.25), inset 0 1px 0 rgba(255, 77, 106, 0.2);
+}
+
+.btn-futuristic-danger:active {
+  transform: scale(0.95);
+}
+
+.btn-futuristic-ghost {
+  background: linear-gradient(135deg, rgba(74, 85, 104, 0.15) 0%, rgba(74, 85, 104, 0.08) 100%);
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-radius: 1.5rem;
+  color: var(--cool-white);
+  box-shadow: 0 0 10px rgba(74, 85, 104, 0.08);
+  transition: all 0.2s ease;
+}
+
+.btn-futuristic-ghost:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+.btn-futuristic-ghost:active {
+  transform: scale(0.95);
+}
+
+/* ============================================================
+   STATUS BAR
+   ============================================================ */
+.futuristic-status-bar {
+  background: linear-gradient(180deg, rgba(6, 6, 10, 0.95) 0%, rgba(6, 6, 10, 0.7) 100%);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+/* ============================================================
+   FUTURISTIC INPUT
+   ============================================================ */
+.input-futuristic {
+  background: linear-gradient(180deg, rgba(13, 17, 23, 0.95) 0%, rgba(22, 27, 38, 0.9) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 1rem;
+  color: var(--cool-white);
+  caret-color: var(--cyan-primary);
+  transition: all 0.2s ease;
+}
+
+.input-futuristic::placeholder {
+  color: var(--dim-steel);
+}
+
+.input-futuristic:focus {
+  outline: none;
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), inset 0 0 10px rgba(0, 212, 255, 0.05);
+}
+
+.input-futuristic:disabled {
+  opacity: 0.5;
+}
+
+/* ============================================================
+   DRAMATIC SUCCESS BURST
+   ============================================================ */
+@keyframes success-burst {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(0, 255, 136, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 60px rgba(0, 255, 136, 0.4), 0 0 120px rgba(0, 255, 136, 0.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3), 0 0 80px rgba(0, 255, 136, 0.1);
+  }
+}
+
+.animate-success-burst {
+  animation: success-burst 0.6s ease-out forwards;
+}
+
+@keyframes error-burst {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(255, 77, 106, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 60px rgba(255, 77, 106, 0.4), 0 0 120px rgba(255, 77, 106, 0.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(255, 77, 106, 0.3), 0 0 80px rgba(255, 77, 106, 0.1);
+  }
+}
+
+.animate-error-burst {
+  animation: error-burst 0.6s ease-out forwards;
+}
+
+/* ============================================================
+   HEXAGON DECORATIVE
+   ============================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ============================================================
+   RADIAL HIGHLIGHT
+   ============================================================ */
+.radial-highlight-cyan {
+  background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+}
+
+.radial-highlight-emerald {
+  background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.08) 0%, transparent 70%);
+}
+
+.radial-highlight-coral {
+  background: radial-gradient(ellipse at center, rgba(255, 77, 106, 0.08) 0%, transparent 70%);
+}

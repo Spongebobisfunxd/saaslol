@@ -1,0 +1,91 @@
+{
+  "navigation": {
+    "dashboard": "Dashboard",
+    "customers": "Customers",
+    "programs": "Loyalty Programs",
+    "rewards": "Rewards",
+    "campaigns": "Campaigns",
+    "transactions": "Transactions",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "help": "Help",
+    "logout": "Log out"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "back": "Back",
+    "next": "Next",
+    "confirm": "Confirm",
+    "close": "Close",
+    "add": "Add",
+    "remove": "Remove",
+    "reset": "Reset",
+    "submit": "Submit",
+    "upload": "Upload",
+    "download": "Download",
+    "refresh": "Refresh",
+    "details": "Details",
+    "copy": "Copy",
+    "selectAll": "Select all"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "suspended": "Suspended",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "draft": "Draft",
+    "archived": "Archived",
+    "expired": "Expired"
+  },
+  "errors": {
+    "generic": "An unexpected error occurred. Please try again.",
+    "notFound": "The requested resource was not found.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "forbidden": "Access denied.",
+    "networkError": "Network error. Please check your internet connection.",
+    "serverError": "Server error. Please try again later.",
+    "validationError": "The form contains errors. Please correct them and try again.",
+    "sessionExpired": "Your session has expired. Please log in again."
+  },
+  "confirmations": {
+    "delete": "Are you sure you want to delete this item? This action cannot be undone.",
+    "unsavedChanges": "You have unsaved changes. Are you sure you want to leave this page?",
+    "deactivate": "Are you sure you want to deactivate this item?",
+    "logout": "Are you sure you want to log out?"
+  },
+  "pagination": {
+    "page": "Page",
+    "of": "of",
+    "showing": "Showing",
+    "results": "results",
+    "perPage": "per page",
+    "first": "First",
+    "last": "Last",
+    "previous": "Previous",
+    "next": "Next",
+    "noResults": "No results"
+  },
+  "time": {
+    "seconds": "seconds",
+    "minutes": "minutes",
+    "hours": "hours",
+    "days": "days",
+    "weeks": "weeks",
+    "months": "months",
+    "years": "years",
+    "ago": "ago",
+    "justNow": "just now",
+    "yesterday": "yesterday",
+    "today": "today",
+    "tomorrow": "tomorrow"
+  }
+}

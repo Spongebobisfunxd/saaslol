@@ -1,0 +1,63 @@
+{
+  "title": "Portal klienta",
+  "welcome": "Witaj, {name}!",
+  "navigation": {
+    "home": "Strona główna",
+    "myPoints": "Moje punkty",
+    "rewards": "Nagrody",
+    "history": "Historia",
+    "profile": "Mój profil",
+    "cards": "Moje karty",
+    "referrals": "Polecenia"
+  },
+  "home": {
+    "pointsBalance": "Saldo punktów",
+    "currentTier": "Aktualny poziom",
+    "nextTier": "Następny poziom",
+    "pointsToNextTier": "Brakuje {points} pkt do następnego poziomu",
+    "recentTransactions": "Ostatnie transakcje",
+    "availableRewards": "Dostępne nagrody",
+    "activeOffers": "Aktywne oferty"
+  },
+  "points": {
+    "balance": "Saldo punktów",
+    "earned": "Zdobyte punkty",
+    "spent": "Wydane punkty",
+    "expiring": "Punkty wygasające",
+    "expiringDate": "Wygasa {date}",
+    "history": "Historia punktów"
+  },
+  "rewards": {
+    "available": "Dostępne nagrody",
+    "myRewards": "Moje nagrody",
+    "redeem": "Wymień",
+    "pointsNeeded": "{points} pkt",
+    "notEnoughPoints": "Brakuje Ci {points} punktów",
+    "redeemConfirm": "Czy na pewno chcesz wymienić {points} punktów na tę nagrodę?",
+    "redeemSuccess": "Nagroda została wymieniona! Sprawdź szczegóły w zakładce 'Moje nagrody'."
+  },
+  "stamps": {
+    "myCards": "Moje karty pieczątkowe",
+    "stampsCollected": "{current} z {total} pieczątek",
+    "completed": "Karta skompletowana!",
+    "claimReward": "Odbierz nagrodę"
+  },
+  "profile": {
+    "personalInfo": "Dane osobowe",
+    "preferences": "Preferencje",
+    "consents": "Zgody",
+    "changePassword": "Zmień hasło",
+    "deleteAccount": "Usuń konto"
+  },
+  "referral": {
+    "title": "Poleć znajomemu",
+    "description": "Podziel się swoim kodem polecającym i zyskaj {points} punktów za każde polecenie!",
+    "code": "Twój kod polecający",
+    "copyCode": "Kopiuj kod",
+    "copied": "Skopiowano!",
+    "shareLink": "Udostępnij link",
+    "referrals": "Twoje polecenia",
+    "pending": "Oczekujące",
+    "completed": "Zrealizowane"
+  }
+}

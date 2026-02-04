@@ -1,0 +1,39 @@
+{
+  "title": "Panel główny",
+  "welcome": "Witaj, {name}!",
+  "metrics": {
+    "totalCustomers": "Łączna liczba klientów",
+    "activeCustomers": "Aktywni klienci",
+    "newCustomersToday": "Nowi klienci dzisiaj",
+    "newCustomersWeek": "Nowi klienci w tym tygodniu",
+    "totalRevenue": "Łączny przychód",
+    "revenueToday": "Przychód dzisiaj",
+    "revenueThisMonth": "Przychód w tym miesiącu",
+    "pointsIssued": "Wydane punkty",
+    "pointsRedeemed": "Wykorzystane punkty",
+    "redemptionRate": "Współczynnik wykorzystania",
+    "averageTransactionValue": "Średnia wartość transakcji",
+    "activePrograms": "Aktywne programy",
+    "activeCampaigns": "Aktywne kampanie",
+    "pendingRewards": "Oczekujące nagrody"
+  },
+  "charts": {
+    "customerGrowth": "Wzrost liczby klientów",
+    "revenueOverTime": "Przychód w czasie",
+    "topRewards": "Najpopularniejsze nagrody",
+    "programDistribution": "Rozkład programów",
+    "transactionVolume": "Wolumen transakcji"
+  },
+  "menu": {
+    "overview": "Przegląd",
+    "analytics": "Analityka",
+    "recentActivity": "Ostatnia aktywność",
+    "quickActions": "Szybkie akcje"
+  },
+  "quickActions": {
+    "addCustomer": "Dodaj klienta",
+    "createCampaign": "Utwórz kampanię",
+    "issueReward": "Wydaj nagrodę",
+    "viewReports": "Zobacz raporty"
+  }
+}

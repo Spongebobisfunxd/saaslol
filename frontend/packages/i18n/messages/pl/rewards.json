@@ -1,0 +1,53 @@
+{
+  "title": "Nagrody",
+  "createReward": "Utwórz nagrodę",
+  "editReward": "Edytuj nagrodę",
+  "rewardDetails": "Szczegóły nagrody",
+  "deleteReward": "Usuń nagrodę",
+  "redeem": "Wymień nagrodę",
+  "fields": {
+    "name": "Nazwa nagrody",
+    "description": "Opis",
+    "pointsCost": "Koszt w punktach",
+    "type": "Typ nagrody",
+    "category": "Kategoria",
+    "image": "Zdjęcie",
+    "stock": "Dostępna ilość",
+    "maxPerCustomer": "Limit na klienta",
+    "validFrom": "Ważna od",
+    "validUntil": "Ważna do",
+    "status": "Status",
+    "terms": "Warunki"
+  },
+  "types": {
+    "physical": "Fizyczna",
+    "digital": "Cyfrowa",
+    "discount": "Zniżka",
+    "freeProduct": "Darmowy produkt",
+    "experience": "Doświadczenie",
+    "voucher": "Voucher",
+    "giftCard": "Karta podarunkowa"
+  },
+  "categories": {
+    "food": "Jedzenie",
+    "drinks": "Napoje",
+    "merchandise": "Gadżety",
+    "services": "Usługi",
+    "discounts": "Zniżki",
+    "special": "Specjalne"
+  },
+  "stats": {
+    "totalRedeemed": "Łącznie wymieniono",
+    "availableRewards": "Dostępne nagrody",
+    "mostPopular": "Najpopularniejsza",
+    "averageCost": "Średni koszt (pkt)"
+  },
+  "messages": {
+    "created": "Nagroda została utworzona.",
+    "updated": "Nagroda została zaktualizowana.",
+    "deleted": "Nagroda została usunięta.",
+    "redeemed": "Nagroda została wymieniona pomyślnie.",
+    "outOfStock": "Nagroda jest niedostępna.",
+    "insufficientPoints": "Niewystarczająca liczba punktów."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Kampanie",
+  "createCampaign": "Utwórz kampanię",
+  "editCampaign": "Edytuj kampanię",
+  "campaignDetails": "Szczegóły kampanii",
+  "deleteCampaign": "Usuń kampanię",
+  "fields": {
+    "name": "Nazwa kampanii",
+    "description": "Opis",
+    "type": "Typ kampanii",
+    "status": "Status",
+    "startDate": "Data rozpoczęcia",
+    "endDate": "Data zakończenia",
+    "targetAudience": "Grupa docelowa",
+    "channel": "Kanał",
+    "budget": "Budżet",
+    "bonusPoints": "Punkty bonusowe",
+    "multiplier": "Mnożnik punktów",
+    "conditions": "Warunki",
+    "message": "Treść wiadomości"
+  },
+  "types": {
+    "bonusPoints": "Punkty bonusowe",
+    "doublePoints": "Podwójne punkty",
+    "welcome": "Powitalna",
+    "birthday": "Urodzinowa",
+    "reactivation": "Reaktywacyjna",
+    "seasonal": "Sezonowa",
+    "referral": "Poleceniowa",
+    "flash": "Błyskawiczna"
+  },
+  "channels": {
+    "sms": "SMS",
+    "email": "E-mail",
+    "push": "Powiadomienie push",
+    "inApp": "W aplikacji",
+    "all": "Wszystkie kanały"
+  },
+  "audience": {
+    "all": "Wszyscy klienci",
+    "new": "Nowi klienci",
+    "inactive": "Nieaktywni klienci",
+    "vip": "Klienci VIP",
+    "birthday": "Urodziny w tym miesiącu",
+    "custom": "Segment niestandardowy"
+  },
+  "stats": {
+    "sent": "Wysłano",
+    "delivered": "Dostarczono",
+    "opened": "Otwarto",
+    "clicked": "Kliknięto",
+    "converted": "Konwersja",
+    "totalReach": "Zasięg"
+  },
+  "messages": {
+    "created": "Kampania została utworzona.",
+    "updated": "Kampania została zaktualizowana.",
+    "deleted": "Kampania została usunięta.",
+    "activated": "Kampania została aktywowana.",
+    "paused": "Kampania została wstrzymana.",
+    "completed": "Kampania została zakończona."
+  }
+}

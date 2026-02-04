@@ -1,0 +1,12 @@
+{
+  "name": "@loyalty/config",
+  "version": "0.0.1",
+  "private": true,
+  "files": ["eslint", "tailwind", "typescript"],
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

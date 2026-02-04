@@ -1,0 +1,87 @@
+{
+  "title": "Ustawienia",
+  "sections": {
+    "general": "Ogólne",
+    "company": "Firma",
+    "branding": "Branding",
+    "billing": "Rozliczenia",
+    "notifications": "Powiadomienia",
+    "integrations": "Integracje",
+    "security": "Bezpieczeństwo",
+    "team": "Zespół",
+    "api": "Klucze API"
+  },
+  "general": {
+    "language": "Język",
+    "timezone": "Strefa czasowa",
+    "dateFormat": "Format daty",
+    "currency": "Waluta",
+    "theme": "Motyw",
+    "themeLight": "Jasny",
+    "themeDark": "Ciemny",
+    "themeSystem": "Systemowy"
+  },
+  "company": {
+    "name": "Nazwa firmy",
+    "nip": "NIP",
+    "address": "Adres",
+    "city": "Miasto",
+    "postalCode": "Kod pocztowy",
+    "phone": "Telefon",
+    "email": "E-mail kontaktowy",
+    "website": "Strona internetowa",
+    "industry": "Branża",
+    "logo": "Logo firmy"
+  },
+  "branding": {
+    "primaryColor": "Kolor główny",
+    "secondaryColor": "Kolor dodatkowy",
+    "logo": "Logo",
+    "favicon": "Favicon",
+    "portalTitle": "Tytuł portalu klienta",
+    "customCSS": "Własne style CSS"
+  },
+  "billing": {
+    "plan": "Aktualny plan",
+    "nextBilling": "Następne rozliczenie",
+    "paymentMethod": "Metoda płatności",
+    "invoices": "Faktury",
+    "changePlan": "Zmień plan",
+    "usage": "Wykorzystanie zasobów"
+  },
+  "notifications": {
+    "emailNotifications": "Powiadomienia e-mail",
+    "smsNotifications": "Powiadomienia SMS",
+    "pushNotifications": "Powiadomienia push",
+    "newCustomer": "Nowy klient",
+    "rewardRedeemed": "Wymiana nagrody",
+    "lowStock": "Niski stan magazynowy",
+    "campaignCompleted": "Zakończenie kampanii",
+    "dailyReport": "Raport dzienny",
+    "weeklyReport": "Raport tygodniowy"
+  },
+  "security": {
+    "changePassword": "Zmień hasło",
+    "twoFactor": "Uwierzytelnianie dwuetapowe",
+    "sessions": "Aktywne sesje",
+    "loginHistory": "Historia logowań",
+    "apiKeys": "Klucze API"
+  },
+  "team": {
+    "members": "Członkowie zespołu",
+    "invite": "Zaproś członka",
+    "role": "Rola",
+    "roles": {
+      "owner": "Właściciel",
+      "admin": "Administrator",
+      "manager": "Menedżer",
+      "staff": "Pracownik"
+    },
+    "inviteSent": "Zaproszenie zostało wysłane.",
+    "memberRemoved": "Członek zespołu został usunięty."
+  },
+  "messages": {
+    "saved": "Ustawienia zostały zapisane.",
+    "error": "Nie udało się zapisać ustawień."
+  }
+}

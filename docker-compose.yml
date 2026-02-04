@@ -1,0 +1,107 @@
+services:
+  # ── Infrastructure ──────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: loyalty-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: loyalty
+      POSTGRES_PASSWORD: loyalty_dev
+      POSTGRES_DB: loyalty_saas
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U loyalty -d loyalty_saas"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: loyalty-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── Backend API ─────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      target: backend
+    container_name: loyalty-backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      NODE_ENV: development
+      DATABASE_URL: postgres://loyalty:loyalty_dev@postgres:5432/loyalty_saas
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: docker-dev-secret-change-in-prod
+      JWT_ACCESS_EXPIRY: 15m
+      JWT_REFRESH_EXPIRY: 7d
+      CORS_ORIGINS: http://localhost:3000,http://localhost:3002,http://localhost:3003
+      PAYU_SANDBOX: "true"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # ── Dashboard (Admin) ──────────────────────────────────────
+  dashboard:
+    build:
+      context: .
+      target: dashboard
+    container_name: loyalty-dashboard
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      HOSTNAME: 0.0.0.0
+      PORT: 3000
+    depends_on:
+      - backend
+
+  # ── Portal (Customer-facing) ───────────────────────────────
+  portal:
+    build:
+      context: .
+      target: portal
+    container_name: loyalty-portal
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+    environment:
+      HOSTNAME: 0.0.0.0
+      PORT: 3002
+    depends_on:
+      - backend
+
+  # ── Kiosk (Point of Sale) ──────────────────────────────────
+  kiosk:
+    build:
+      context: .
+      target: kiosk
+    container_name: loyalty-kiosk
+    restart: unless-stopped
+    ports:
+      - "3003:3003"
+    environment:
+      HOSTNAME: 0.0.0.0
+      PORT: 3003
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  redisdata:

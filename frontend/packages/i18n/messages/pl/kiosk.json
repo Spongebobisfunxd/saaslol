@@ -1,0 +1,66 @@
+{
+  "title": "Kiosk",
+  "welcome": {
+    "title": "Witaj w programie lojalnościowym",
+    "subtitle": "Zeskanuj kartę lub podaj numer telefonu",
+    "scanCard": "Zeskanuj kartę",
+    "enterPhone": "Podaj numer telefonu",
+    "enterCode": "Wpisz kod klienta"
+  },
+  "phone": {
+    "title": "Podaj numer telefonu",
+    "placeholder": "Wpisz numer telefonu",
+    "submit": "Dalej",
+    "notFound": "Nie znaleziono klienta z tym numerem telefonu.",
+    "register": "Nie masz konta? Zarejestruj się!"
+  },
+  "customer": {
+    "greeting": "Cześć, {name}!",
+    "points": "Twoje punkty",
+    "tier": "Twój poziom",
+    "lastVisit": "Ostatnia wizyta"
+  },
+  "actions": {
+    "addPoints": "Nalicz punkty",
+    "redeemReward": "Wymień nagrodę",
+    "addStamp": "Dodaj pieczątkę",
+    "checkBalance": "Sprawdź saldo",
+    "viewRewards": "Zobacz nagrody",
+    "register": "Zarejestruj się"
+  },
+  "transaction": {
+    "enterAmount": "Podaj kwotę transakcji",
+    "amount": "Kwota (zł)",
+    "pointsEarned": "Zdobyte punkty: {points}",
+    "confirm": "Potwierdź transakcję",
+    "success": "Transakcja została zapisana!",
+    "receipt": "Paragon"
+  },
+  "stamp": {
+    "added": "Pieczątka została dodana!",
+    "cardComplete": "Karta pieczątkowa jest pełna! Możesz odebrać nagrodę.",
+    "progress": "{current} z {total}"
+  },
+  "reward": {
+    "select": "Wybierz nagrodę",
+    "confirm": "Czy wymienić {points} punktów na: {reward}?",
+    "success": "Nagroda wymieniona pomyślnie!",
+    "code": "Kod realizacji: {code}"
+  },
+  "register": {
+    "title": "Dołącz do programu",
+    "firstName": "Imię",
+    "phone": "Numer telefonu",
+    "consent": "Wyrażam zgodę na przetwarzanie danych",
+    "submit": "Zarejestruj",
+    "success": "Rejestracja zakończona! Witaj w programie."
+  },
+  "offline": {
+    "title": "Tryb offline",
+    "message": "Kiosk działa w trybie offline. Operacje zostaną zsynchronizowane po przywróceniu połączenia.",
+    "pending": "Oczekujące operacje: {count}"
+  },
+  "idle": {
+    "message": "Dotknij ekranu, aby rozpocząć"
+  }
+}

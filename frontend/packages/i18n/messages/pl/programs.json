@@ -1,0 +1,54 @@
+{
+  "title": "Programy lojalnościowe",
+  "createProgram": "Utwórz program",
+  "editProgram": "Edytuj program",
+  "programDetails": "Szczegóły programu",
+  "deleteProgram": "Usuń program",
+  "fields": {
+    "name": "Nazwa programu",
+    "description": "Opis",
+    "type": "Typ programu",
+    "status": "Status",
+    "startDate": "Data rozpoczęcia",
+    "endDate": "Data zakończenia",
+    "pointsPerPLN": "Punkty za 1 zł",
+    "minimumTransaction": "Minimalna transakcja",
+    "welcomeBonus": "Bonus powitalny",
+    "rules": "Zasady programu",
+    "terms": "Regulamin"
+  },
+  "types": {
+    "points": "Punktowy",
+    "stamps": "Pieczątkowy",
+    "tiers": "Poziomowy",
+    "cashback": "Cashback",
+    "hybrid": "Hybrydowy"
+  },
+  "tiers": {
+    "title": "Poziomy",
+    "addTier": "Dodaj poziom",
+    "name": "Nazwa poziomu",
+    "threshold": "Próg punktowy",
+    "multiplier": "Mnożnik punktów",
+    "benefits": "Korzyści"
+  },
+  "stamps": {
+    "title": "Pieczątki",
+    "required": "Wymagana liczba pieczątek",
+    "reward": "Nagroda za skompletowanie",
+    "currentCards": "Aktywne karty pieczątkowe"
+  },
+  "stats": {
+    "totalMembers": "Łączna liczba uczestników",
+    "activeMembers": "Aktywni uczestnicy",
+    "pointsInCirculation": "Punkty w obiegu",
+    "redemptionRate": "Współczynnik wykorzystania"
+  },
+  "messages": {
+    "created": "Program lojalnościowy został utworzony.",
+    "updated": "Program został zaktualizowany.",
+    "deleted": "Program został usunięty.",
+    "activated": "Program został aktywowany.",
+    "deactivated": "Program został dezaktywowany."
+  }
+}

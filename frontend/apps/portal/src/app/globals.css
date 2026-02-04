@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm Organic Palette */
+    --background: 34 33% 97%;
+    --foreground: 18 30% 18%;
+    --card: 24 60% 97%;
+    --card-foreground: 18 30% 18%;
+    --popover: 34 33% 97%;
+    --popover-foreground: 18 30% 18%;
+    --primary: 16 55% 50%;
+    --primary-foreground: 34 33% 97%;
+    --secondary: 24 60% 95%;
+    --secondary-foreground: 18 30% 18%;
+    --muted: 24 18% 88%;
+    --muted-foreground: 18 12% 48%;
+    --accent: 24 60% 95%;
+    --accent-foreground: 18 30% 18%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 34 33% 97%;
+    --border: 24 20% 88%;
+    --input: 24 20% 88%;
+    --ring: 16 55% 50%;
+    --radius: 1rem;
+
+    /* Custom warm tokens */
+    --warm-cream: #faf7f2;
+    --warm-terracotta: #c4653a;
+    --warm-sienna: #8b4528;
+    --warm-sage: #6b8f6b;
+    --warm-peach: #fdf0e7;
+    --warm-brown: #3d2c22;
+    --warm-clay: #a8928a;
+    --warm-sand: #e8ddd4;
+    --warm-linen: #f5ede4;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: var(--warm-cream);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background-color: rgba(196, 101, 58, 0.2);
+    color: var(--warm-brown);
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for carousel elements */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Safe area bottom for iPhones */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Custom scrollbar for non-hidden areas */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-clay);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--warm-sienna);
+}
+
+/* Organic blob background shapes */
+.organic-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.organic-bg::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(196, 101, 58, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: blob-morph 20s ease-in-out infinite alternate;
+}
+
+.organic-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 50%;
+  height: 50%;
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(107, 143, 107, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: blob-morph 25s ease-in-out infinite alternate-reverse;
+}
+
+/* Organic shape decorators */
+.organic-shape-1 {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.organic-shape-2 {
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+}
+
+.organic-shape-3 {
+  border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+}
+
+/* Warm gradient backgrounds */
+.warm-gradient {
+  background: linear-gradient(135deg, #c4653a 0%, #d4845a 40%, #8b4528 100%);
+}
+
+.warm-gradient-soft {
+  background: linear-gradient(
+    135deg,
+    rgba(196, 101, 58, 0.08) 0%,
+    rgba(253, 240, 231, 0.5) 50%,
+    rgba(107, 143, 107, 0.06) 100%
+  );
+}
+
+.warm-gradient-header {
+  background: linear-gradient(135deg, #c4653a 0%, #b5583a 50%, #8b4528 100%);
+}
+
+/* Animations */
+@keyframes blob-morph {
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(5%, -5%) rotate(5deg);
+  }
+  66% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(-3%, 3%) rotate(-3deg);
+  }
+  100% {
+    border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+    transform: translate(2%, -2%) rotate(2deg);
+  }
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse-warm {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-pulse-warm {
+  animation: pulse-warm 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out forwards;
+}
+
+/* Card organic styling */
+.card-organic {
+  background: var(--warm-peach);
+  border: 1px solid rgba(168, 146, 138, 0.15);
+  border-radius: 1rem;
+  box-shadow:
+    0 1px 3px rgba(61, 44, 34, 0.04),
+    0 4px 12px rgba(61, 44, 34, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-organic:active {
+  transform: scale(0.98);
+}
+
+/* Warm button hover glow */
+.btn-warm-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-warm-glow::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(196, 101, 58, 0.3),
+    rgba(139, 69, 40, 0.3)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-warm-glow:hover::after {
+  opacity: 1;
+}
+
+/* Organic divider */
+.divider-organic {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--warm-sand) 20%,
+    var(--warm-sand) 80%,
+    transparent 100%
+  );
+  border: none;
+}
+
+/* Navigation dot indicator */
+.nav-dot-active {
+  position: relative;
+}
+
+.nav-dot-active::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--warm-terracotta);
+}
+
+/* Stamp filled effect */
+.stamp-filled {
+  background: linear-gradient(135deg, var(--warm-terracotta), var(--warm-sienna));
+  box-shadow: 0 2px 8px rgba(196, 101, 58, 0.3);
+}
+
+/* Touch feedback for mobile */
+@media (hover: none) {
+  .touch-feedback:active {
+    opacity: 0.85;
+    transform: scale(0.97);
+    transition: all 0.1s ease;
+  }
+}
+
+/* Ensure content sits above organic decorators */
+.organic-bg > * {
+  position: relative;
+  z-index: 1;
+}
